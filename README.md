@@ -39,3 +39,65 @@ sampling할 때 내일은 동영상 프레임 오리기
 용도에 따라 프레임 수 결정 가능 (산불감시 CCTV는 1분에 한 프레임, 주차장 차량 인식은 1초에 1프레임 등)
 자율주행차가 신호등 인식 시 어떤 신호등을 기준으로 따라야하는 지 판단하도록 처리
 color space 색을 분별해내는 방법 (갈변된 바나나와 싱싱한 바나나 구분하기)
+
+
+20221002 오전
+YOLO신경망을 활용한 이미지 인식 개념 이해
+YOLO :
+테두리상자 조정 (Bounding Box Coordinate)과 분류(Classification)를 
+동일 신경망 구조를 통해 동시에 실행하는 통합인식(Unified Detection)을 구현
+
+- 기존의 Object Detection은 single window나 regional proposal methods등을 통해 
+바운딩 박스를 잡은 후 탐지된 바운딩 박스에 대해 분류 수행하는 2 stage detection
+
+하나의 컨볼루션 네트워크를 통해 대상의 위치와 클래스를 한번에 예측 
+(한 번만에 image detection을 할 수 있는 1 stage detection 알고리즘)
+테두리상자 조정 (Bounding Box Coordinate)과 분류(Classification)를 
+동일 신경망 구조를 통해 동시에 실행하는 통합인식(Unified Detection)을 구현
+
+
+
+https://lynnshin.tistory.com/48 참고
+
+오후 
+색공간
+
+Google Cloud Vision API 에서 RGB high, low 값 복사 
+
+RGB(251, 208, 22)
+RGB(255, 213, 5)
+RGB(221, 195, 58)
+
+	R G B
+high [255, 213, 58]
+low [221, 195, 5]
+
+banana1-good
+[0,32,179]
+[255,255,255]
+
+banana2-bad
+[9,106,0]
+[255,255,255]
+
+signal-yellow
+[12,23,237]
+[255,255,255]
+
+Frame 원래 이미지
+
+HSV값 : 대부분 코드값으로 범위가 지정되어 나옴.
+RGB -> SHV
+효율적으로 색을 분별하는 방법
+
+
+Object Detection 
+Optimizer
+Gridient Descent
+2013~
+
+다음 주
+Deep Learning Tensorflow, Keras framework를 이용해서 Classification하는 모델 학습 방법
+OpenCV이용한 Img Processing 과정
+Custom module학습 하는 방법
+CNN World
